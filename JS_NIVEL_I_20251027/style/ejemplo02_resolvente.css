@@ -1,0 +1,21 @@
+.exito{
+    background-color: green;
+    color: white;
+    }
+.alerta{
+    background-color: orange;
+    color: black;
+}
+.error{
+    background-color: red;
+    color: #CCC;
+}
+.mensaje{
+    padding: 20px;
+    text-align: center;
+    border-style: solid;
+    border-width: 2px;
+    border-color: gray;
+    width: 60%;
+    margin-left: 20%;
+}

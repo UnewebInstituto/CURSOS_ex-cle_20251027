@@ -1,0 +1,93 @@
+echo "# JS_NIVEL_I_20251027" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/UnewebInstituto/JS_NIVEL_I_20251027.git
+git push -u origin main
+
+git remote add origin https://github.com/UnewebInstituto/JS_NIVEL_I_20251027.git
+git branch -M main
+git push -u origin main
+
+
+auravasquez993@gmail;aura.vasquez@ex-cle.com;
+mariiromero17@gmail.com;maria.romero@ex-cle.com;
+jondavid9555@gmail.com;jonatan.castillo@ex-cle.com;
+pguarisco@gmail.com;paolo.guarisco@ex-cle.com;
+PAOLO
+0412-5531241
+
+
+
+¡Absolutamente\! Asumiendo el rol de experto en **JavaScript**, el error que estás experimentando es muy claro y común cuando se trabaja con el método `addEventListener`.
+
+-----
+
+## 🛑 Diagnóstico del Error
+
+El mensaje de error clave es:
+
+> `Uncaught TypeError: Failed to execute 'addEventListener' on 'EventTarget': parameter 2 is not of type 'Object'.`
+
+### Causa del Error
+
+El error se debe a que el segundo parámetro que le estás pasando al método `addEventListener` es una **cadena de texto** (`'calcular'`), cuando en realidad espera una **función** (un *objeto* de tipo `Function`) que debe ejecutarse al ocurrir el evento.
+
+### Código Problemático (Línea 79)
+
+```javascript
+// ...
+btnCalcular.addEventListener("click",'calcular'); // <- ESTA ES LA LÍNEA 79
+// ...
+```
+
+Al rodear el nombre de la función `calcular` con comillas simples, JavaScript lo interpreta como una *string* literal `'calcular'` y no como una referencia a la función `calcular()`. Como una cadena de texto no es un objeto de tipo función, el navegador lanza el `TypeError`.
+
+-----
+
+## ✅ Solución Correcta
+
+Para corregir el error, simplemente debes pasar la **referencia** a la función `calcular` como el segundo argumento, **sin comillas**.
+
+### Código Corregido
+
+Tu código debe cambiar de:
+
+```javascript
+btnCalcular.addEventListener("click",'calcular');
+```
+
+A:
+
+```javascript
+btnCalcular.addEventListener("click", calcular); // ¡Quita las comillas!
+```
+
+### Explicación de la Solución
+
+  * **`"click"`:** Es el nombre del evento que quieres escuchar.
+  * **`calcular` (sin comillas):** Es la **referencia** a la función que debe ejecutarse cuando se hace clic en el botón.
+
+### 💡 Consejo Adicional (Buenas Prácticas)
+
+En el bloque de código que me proporcionaste, declaraste variables en el paso 3 que se usan globalmente (sin `var`, `let` o `const` dentro de la función `calcular`). Aunque funciona, es una práctica antigua. Te recomiendo que uses la palabra clave `const` o `let` para todas tus declaraciones para evitar crear variables globales de forma accidental y mejorar el alcance de tus variables.
+
+**Ejemplo de mejora en el orden y alcance de variables:**
+
+```javascript
+// 4-Cuerpo principal del prograna
+const btnCalcular = document.getElementById('btnCalcular');
+const resultado = document.getElementById('resultado');
+
+// Ahora sí, asignamos el evento
+btnCalcular.addEventListener("click", calcular);
+```
+
+¡Espero que esto te ayude a resolver el problema\! ¿Hay algo más que te gustaría revisar de tu código?
+
+BOOTSTRAP:
+https://getbootstrap.com/
+
+W3SCCHOOLS
+https://www.w3schools.com/bootstrap/bootstrap_ver.asp

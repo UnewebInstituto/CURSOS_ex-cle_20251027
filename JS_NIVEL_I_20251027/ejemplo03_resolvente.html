@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ejemplo03 Resolvente</h1>
+        <div>
+            <div class="mb-3 mt-3">
+                <label for="a" class="form-label">a:</label>
+                <input type="number" class="form-control" id="a" placeholder="Ingrese el valor 'a'" name="a" step="0.01">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="b" class="form-label">b:</label>
+                <input type="number" class="form-control" id="b" placeholder="Ingrese el valor 'b'" name="b" step="0.01">
+            </div>
+            <div class="mb-3 mt-3">
+                <label for="c" class="form-label">c:</label>
+                <input type="number" class="form-control" id="c" placeholder="Ingrese el valor 'c" name="c" step="0.01">
+            </div>
+            <div class="mb-3 mt-3">
+                <button class="btn btn-primary" id="btnCalcular">CALCULAR</button>
+                <button class="btn btn-warning" onclick="limpiar()">LIMPIAR</button>
+            </div>
+            <div id="resultado"></div>
+        </div>
+    </div>
+    <script src="./script/ejemplo02_resolvente.js"></script>
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+    
+</body>
+</html>
