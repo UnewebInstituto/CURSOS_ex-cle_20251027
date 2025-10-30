@@ -1,0 +1,51 @@
+## 👨‍💻 Equivalencia entre `setInterval()` y `setTimeout()` en JavaScript
+
+**No, `setInterval()` y `setTimeout()` no son directamente equivalentes en su implementación o uso principal**, aunque se puede lograr que `setTimeout()` se comporte de manera similar a `setInterval()` mediante recursión.
+
+-----
+
+### ⏳ `setTimeout()` (Retraso de Ejecución Única)
+
+  * **Propósito:** Ejecuta una función **una sola vez** después de un período de tiempo especificado.
+  * **Mecanismo:** Programa la ejecución de un *callback* para una fecha posterior. Una vez que se ejecuta, el temporizador se detiene.
+
+### ⏱️ `setInterval()` (Ejecución Repetitiva)
+
+  * **Propósito:** Ejecuta una función **repetidamente** a intervalos de tiempo fijos, hasta que se detiene explícitamente con `clearInterval()`.
+  * **Mecanismo:** Programa la ejecución recurrente de un *callback*.
+
+-----
+
+### 🔄 Simulación de `setInterval()` con `setTimeout()` (Recursión)
+
+La forma en que se vuelven "equivalentes" es cuando se usa `setTimeout()` de forma **recursiva** para simular la repetición de `setInterval()`.
+
+#### **Ejemplo de Simulación:**
+
+```javascript
+function miSetInterval(callback, delay) {
+  // Función interna que llama al callback y luego se programa a sí misma
+  const loop = () => {
+    callback();
+    // Vuelve a llamar a setTimeout, creando la repetición
+    setTimeout(loop, delay);
+  };
+
+  // Inicia la primera ejecución
+  setTimeout(loop, delay);
+}
+
+// Uso:
+// miSetInterval(() => console.log("Se repite"), 1000);
+```
+
+### 🎯 Diferencia Clave (Mecanismo y Precisión)
+
+Aunque la recursión hace posible la equivalencia funcional, existe una diferencia crítica en cómo manejan el tiempo y los retrasos:
+
+| Característica | `setInterval()` | `setTimeout()` (Recursivo) |
+| :--- | :--- | :--- |
+| **Tiempo entre Llamadas** | El temporizador (el *delay*) comienza *antes* de que la función se ejecute y se repite. Esto puede llevar a que las llamadas se "acumulen" o se ejecuten **sin la pausa completa** si la función tarda más que el *delay* en completarse. | El siguiente temporizador se establece *después* de que la función anterior ha terminado. Esto asegura que siempre habrá **al menos el *delay*** entre el final de una ejecución y el inicio de la siguiente. |
+| **Robustez** | Puede ser **menos preciso** si la función de *callback* es larga o si el sistema está ocupado. | Es generalmente **más robusto y preciso** para garantizar un espacio de tiempo mínimo entre ejecuciones, ya que espera a que la anterior termine. |
+
+**Conclusión:** La implementación recursiva de `setTimeout()` es a menudo la **práctica recomendada** por encima de `setInterval()` para tareas críticas o largas, ya que garantiza que las ejecuciones no se superpongan ni se apilen, proporcionando un control más fiable sobre el intervalo entre la finalización de una tarea y el inicio de la siguiente.
