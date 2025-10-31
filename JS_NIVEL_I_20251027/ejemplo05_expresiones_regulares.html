@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./assets/logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <title>Ejemplo05 Expresiones Regulares</title>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <h1 class="text-center">Registro de Usuario</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="nombre" class="form-label">Nombre:</label>
+                    <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" name="nombre" onblur="validaNombre()" onchange="validaNombre()">
+                    <div id="msjNombre"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="apellido" class="form-label">Apellido:</label>
+                    <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" name="apellido" onblur="validaApellido()" onchange="validaApellido()">
+                    <div id="msjApellido"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="correo" class="form-label">Correo electronico:</label>
+                    <input type="email" class="form-control" id="correo" placeholder="Ingrese correo electronico" name="correo" onblur="validaCorreo()" onchange="validaCorreo()">
+                    <div id="msjCorreo"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="telefono" class="form-label">Telefono:</label>
+                    <input type="text" class="form-control" id="telefono" placeholder="Ingrese numero de telefono" name="telefono" onblur="validaTelefono()" onchange="validaTelefono()">
+                    <div id="msjTelefono"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="clave1" class="form-label">Clave:</label>
+                    <input type="password" class="form-control" id="clave1" placeholder="Ingrese clave" name="clave1" onblur="validaClave1()" onchange="validaClave1()">
+                </div>
+                <div id="msjClave1"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3">
+                    <label for="clave2" class="form-label">Repetir Clave:</label>
+                    <input type="password" class="form-control" id="clave2" placeholder="Repita la clave" name="clave2" onblur="validaClave2()" onchange="validaClave2()">
+                </div>
+                <div id="msjClave2"></div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-4">
+                <div class="mb-3 mt-3 text-center">
+                    <button class="btn btn-success" disabled>GUARDAR</button>
+                    <button class="btn btn-warning">LIMPIAR</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./bootstrap/bootstrap.bundle.min.js"></script>
+
+    <script src="./script/ejemplo05_expresiones_regulares.js"></script>
+</body>
+</html>
