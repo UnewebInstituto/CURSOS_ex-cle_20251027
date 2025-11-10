@@ -1,0 +1,9 @@
+    // Create an Object
+const person = {
+  firstName: "Sofia",
+  lastName: "Duque",
+  age: 17,
+  eyeColor: "azul"
+};
+
+console.log(person);

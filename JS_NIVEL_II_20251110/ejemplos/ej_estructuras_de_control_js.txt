@@ -1,0 +1,28 @@
+let temperatura = 25;
+let clima = "soleado";
+
+// 💡 If / Else If / Else
+if (temperatura > 30) {
+    console.log("¡Hace demasiado calor!");
+} else if (temperatura >= 20 && clima === "soleado") {
+    console.log("Clima perfecto para salir.");
+} else {
+    console.log("El clima es moderado.");
+}
+// Salida: Clima perfecto para salir.
+
+// 💡 Switch (útil para múltiples condiciones basadas en un solo valor)
+let diaSemana = 3; // 3 es Miércoles
+
+switch (diaSemana) {
+    case 1:
+        console.log("Lunes");
+        break;
+    case 5:
+        console.log("Viernes: fin de la jornada.");
+        break;
+    default:
+        console.log("Día de trabajo intermedio.");
+        break;
+}
+// Salida: Día de trabajo intermedio.

@@ -1,0 +1,46 @@
+/* 
+Objeto JavaScript.assign()
+El Object.assign()método copia propiedades de uno o más objetos de origen a un objeto de destino.
+*/
+
+// Create Target Object
+const person1 = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+// Create Source Object
+const person2 = {firstName: "Anne",lastName: "Smith"};
+
+// Assign Source to Target
+Object.assign(person1, person2);
+console.log(person1);
+
+/*
+En JavaScript, los objetos son los reyes.
+Si entiendes los objetos, entiendes JavaScript.
+En JavaScript, casi "todo" es un objeto.
+
+Los objetos son objetos
+Las matemáticas son objetos
+Las funciones son objetos
+Las fechas son objetos
+Los arrays son objetos
+Los mapas son objetos
+Los conjuntos son objetos
+En JavaScript, todos los valores, excepto los tipos primitivos, son objetos.
+
+
+Tipo	Valor de ejemplo
+string	"Hola"
+number	3.14
+boolean	verdadero
+bigint	12345678901234
+null	nulo
+undefined	indefinido
+symbol	símbolo
+
+
+*/
