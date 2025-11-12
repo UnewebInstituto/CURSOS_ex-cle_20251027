@@ -1,0 +1,49 @@
+import * as readline from 'node:readline/promises';
+import { stdin as input, stdout as output } from 'node:process';
+
+// 1. Crear una instancia de la interfaz de lectura
+const rl = readline.createInterface({ input, output });
+
+// 2. Definir una función asíncrona para la interacción
+
+const multiplicar = function (a,b) {return a*b};
+
+const sumar = (a,b) =>{ return a+b};
+
+const persona ={
+    nombre: "Yoleida",
+    apellido: "Romero",
+    nombreCompleto: function(){
+        return `${this.nombre} ${this.apellido}`;
+    }
+}
+
+async function pedirDatos() {
+    console.log("¡Bienvenido al script");
+    let a;
+    let b;
+
+
+    // Usar await para pausar hasta que el usuario ingrese el dato
+    a = await rl.question('Por favor, ingresa el valor de a: ');
+    b = await rl.question('Por favor, ingresa el valor de b: ');
+    a = Number(a);
+    b = Number(b);
+
+    // 3. Usar el dato ingresado
+    console.log(`El resultado de la multiplicación es, ${multiplicar(a,b)}`);
+    console.log(`El resultado de la suma es, ${sumar(a,b)}`);
+
+    console.log(`El nombre completo de la persona es: ${persona.nombreCompleto()}`);    
+
+    // 4. Cerrar la interfaz es CRUCIAL para que el script termine
+    rl.close();
+}
+
+// Cuerpo principal del script
+// Ejecutar la función
+pedirDatos();
+
+
+
+

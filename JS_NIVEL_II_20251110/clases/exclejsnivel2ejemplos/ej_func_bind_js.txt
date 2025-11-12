@@ -1,0 +1,24 @@
+/*
+Préstamo de funciones
+Mediante este bind() método, un objeto puede tomar prestado un método
+de otro objeto.
+El ejemplo siguiente crea 2 objetos (persona y miembro).
+El objeto miembro toma prestado el método fullname del objeto persona:      
+
+*/
+
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const member = {
+  firstName:"Hege",
+  lastName: "Nilsen",
+}
+
+let fullName = person.fullName.bind(member);
+console.log(fullName());

@@ -1,0 +1,3 @@
+import { API_KEY } from './ej_datos.mjs'; // Importa nombrada
+import Config from './ej_datos.mjs'; // Importa por defecto
+console.log(API_KEY);

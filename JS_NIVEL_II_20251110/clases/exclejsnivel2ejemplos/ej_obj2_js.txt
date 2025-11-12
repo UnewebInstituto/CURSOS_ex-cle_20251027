@@ -1,0 +1,11 @@
+// Create an Object:
+const person = {
+  firstName: "John",
+  lastName: "Doe"
+};
+
+// Create new Object
+const man = Object.create(person);
+man.firstName = "Peter";
+man.lastName = "Pan";   
+console.log(man);   

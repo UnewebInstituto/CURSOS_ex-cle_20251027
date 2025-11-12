@@ -1,0 +1,10 @@
+//Desestructuración de Objeto:
+
+const user = { username: 'tester', email: 'test@mail.com' };
+const { username, email } = user; // Extrae las propiedades en variables
+console.log(username); // Salida: tester
+
+//Desestructuración de Array:
+const colores = ['rojo', 'verde', 'azul'];
+const [principal, secundario] = colores;
+console.log(principal); // Salida: rojo

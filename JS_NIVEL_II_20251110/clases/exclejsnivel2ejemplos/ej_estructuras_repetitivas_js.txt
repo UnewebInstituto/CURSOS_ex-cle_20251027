@@ -1,0 +1,15 @@
+const numbers = [10, 20, 30, 40];
+
+// 💡 Bucle 'for' tradicional (útil cuando necesitas el índice)
+console.log("--- Bucle For Tradicional ---");
+for (let i = 0; i < numbers.length; i++) {
+    console.log(`El valor en el índice ${i} es: ${numbers[i]}`);
+}
+
+// 💡 Array.prototype.forEach (Más declarativo, no devuelve un nuevo array)
+console.log("\n--- Método ForEach ---");
+let total = 0;
+numbers.forEach(function(num) {
+    total += num; // Acumula la suma
+});
+console.log(`Suma total: ${total}`); // Salida: 100

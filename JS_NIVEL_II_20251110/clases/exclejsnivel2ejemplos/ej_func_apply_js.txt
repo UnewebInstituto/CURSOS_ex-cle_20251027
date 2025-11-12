@@ -1,0 +1,20 @@
+const person = {
+  fullName: function() {
+    return this.firstName + " " + this.lastName;
+  }
+}
+
+const person1 = {
+  firstName: "Mary",
+  lastName: "Doe"
+}
+
+// This will return "Mary Doe":
+console.log(person.fullName.apply(person1));
+
+/*
+Diferencia entre call() y apply()
+La diferencia es:
+El call()método acepta argumentos por separado.
+El apply()método toma argumentos como un array.
+*/

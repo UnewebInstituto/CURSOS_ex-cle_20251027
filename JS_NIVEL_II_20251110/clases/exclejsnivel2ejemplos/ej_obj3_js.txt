@@ -1,0 +1,16 @@
+/*
+Objeto JavaScript de entradas()
+ES2019 añadió el método Object fromEntries()a JavaScript.
+
+El fromEntries()método crea un objeto a partir de pares clave/valor iterables.
+
+*/
+
+const fruits = [
+["apples", 300],
+["pears", 900],
+["bananas", 500]
+];
+
+const myObj = Object.fromEntries(fruits);
+console.log(myObj);

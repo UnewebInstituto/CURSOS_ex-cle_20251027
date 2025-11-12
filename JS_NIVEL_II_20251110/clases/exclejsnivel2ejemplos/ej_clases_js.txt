@@ -1,0 +1,13 @@
+class Producto {
+    constructor(nombre, precio) { // Inicializa el objeto
+        this.nombre = nombre;
+        this.precio = precio;
+    }
+
+    getDetalle() { // Método de instancia
+        return `Producto: ${this.nombre}, Precio: $${this.precio}`;
+    }
+}
+
+const laptop = new Producto('Laptop Pro', 1200);
+console.log(laptop.getDetalle()); // Salida: Producto: Laptop Pro, Precio: $1200
