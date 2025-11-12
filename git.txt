@@ -1,8 +1,20 @@
+aura.vasquez@ex-cle.com,
+mariiromero17@gmail.com,
+maria.romero@ex-cle.com,
+jondavid9555@gmail.com,
+jonatan.castillo@ex-cle.com,
+Paolo Guarisco <pguarisco@gmail.com>,
+paolo.guarisco@ex-cle.com,
+"auravasquez993@gmail.com" <auravasquez993@gmail.com>
+
+
+
 echo "# CURSOS_ex-cle_20251027" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
+git remote remove origin
 git remote add origin https://github.com/UnewebInstituto/CURSOS_ex-cle_20251027.git
 git push -u origin main
 

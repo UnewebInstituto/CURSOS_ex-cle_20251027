@@ -1,0 +1,88 @@
+¡Hola\! Asumiendo el rol de experto en **JavaScript** y **Playwright**, te explico cómo indicar que una prueba se ejecute a través de un **navegador específico**. 💻
+
+-----
+
+## 🧭 Especificar el Navegador en Playwright
+
+Playwright está diseñado para ser **multi-navegador** de forma nativa. La forma más común y recomendada de especificar o limitar los navegadores para tus pruebas es a través del archivo de configuración de Playwright, `playwright.config.js` (o `.ts`).
+
+### 1\. Usando el Archivo de Configuración (`playwright.config.js`)
+
+En Playwright, defines **"proyectos"** (`projects`) dentro de la configuración, y cada proyecto puede apuntar a un navegador específico. Playwright ejecutará todas tus pruebas para cada proyecto definido.
+
+Para limitarte solo a un navegador, por ejemplo, **Chrome (Chromium)**, modificarías la sección `projects` de la siguiente manera:
+
+```javascript
+// playwright.config.js
+import { defineConfig, devices } from '@playwright/test';
+
+export default defineConfig({
+  // ... otras configuraciones
+
+  projects: [
+    {
+      name: 'chromium', // Nombre del proyecto (puedes llamarlo como quieras)
+      use: {
+        ...devices['Desktop Chrome'], // Utiliza la configuración preestablecida para Chrome
+        // O también puedes usar: browserName: 'chromium'
+      },
+    },
+
+    // Si quieres desactivar otros navegadores por defecto,
+    // asegúrate de que *solo* los proyectos que quieres estén en esta lista.
+    
+    /* Ejemplo de cómo se vería si quisieras también Firefox:
+    {
+      name: 'firefox',
+      use: { ...devices['Desktop Firefox'] },
+    },
+    */
+  ],
+});
+```
+
+Al ejecutar Playwright con `npx playwright test`, solo se ejecutarán las pruebas usando el navegador **Chromium**.
+
+-----
+
+### 2\. Ejecución desde la Línea de Comandos (CLI)
+
+Si solo quieres **sobrescribir temporalmente** la configuración para una sola ejecución (o si tienes múltiples proyectos y solo quieres ejecutar uno), puedes usar el *flag* `--project` en la línea de comandos:
+
+  * Para ejecutar solo las pruebas configuradas para el proyecto llamado `chromium`:
+
+    ```bash
+    npx playwright test --project=chromium
+    ```
+
+  * Si no has definido proyectos y quieres ejecutar *todos* los tests solo en Chromium:
+
+    ```bash
+    npx playwright test --browser=chromium
+    ```
+
+    > **Nota:** Los navegadores admitidos para el *flag* `--browser` son: `chromium`, `firefox`, y `webkit`.
+
+-----
+
+### 3\. Ejecución Programática (Menos Común)
+
+Si estuvieras usando la API de Playwright directamente (no el *Test Runner*), podrías especificar el navegador al crear la instancia:
+
+```javascript
+import { chromium } from 'playwright';
+
+(async () => {
+  const browser = await chromium.launch(); // Específicamente Chromium
+  const page = await browser.newPage();
+  await page.goto('https://ejemplo.com');
+  // ... tu lógica de prueba
+  await browser.close();
+})();
+```
+
+**Recomendación:** La mejor práctica es usar el archivo **`playwright.config.js`** (Opción 1 y 2) para gestionar los navegadores, ya que esto se integra de manera fluida con el *Test Runner* de Playwright y facilita la ejecución local y en CI/CD.
+
+-----
+
+¿Te gustaría que te muestre un ejemplo de cómo configurar un proyecto para **Webkit (Safari)** además de Chromium en tu archivo de configuración?

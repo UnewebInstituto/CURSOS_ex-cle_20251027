@@ -1,0 +1,841 @@
+# Page snapshot
+
+```yaml
+- generic [active] [ref=e1]:
+  - generic [ref=e2]:
+    - generic [ref=e3]:
+      - img [ref=e4]
+      - link [ref=e5] [cursor=pointer]:
+        - /url: javascript:void(0);
+        - img [ref=e6]
+    - list [ref=e9]:
+      - listitem
+      - listitem [ref=e10] [cursor=pointer]:
+        - link "+ Diplomados y Proyectos":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Diplomados y Proyectos
+      - listitem [ref=e11] [cursor=pointer]:
+        - link "+ Cursos de Programación":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Cursos de Programación
+      - listitem [ref=e12] [cursor=pointer]:
+        - link "+ Cursos de Diseño Web":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Cursos de Diseño Web
+      - listitem [ref=e13] [cursor=pointer]:
+        - link "+ Cursos de Diseño Gráfico":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Cursos de Diseño Gráfico
+      - listitem [ref=e14] [cursor=pointer]:
+        - link "+ Cursos de Mercadeo":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Cursos de Mercadeo
+      - listitem [ref=e15] [cursor=pointer]:
+        - link "+ Especializaciones":
+          - /url: "#"
+          - generic:
+            - img
+            - text: +
+          - generic: Especializaciones
+  - generic [ref=e16]:
+    - navigation "main navigation" [ref=e17]:
+      - generic [ref=e18]:
+        - link [ref=e20] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e21]:
+          - generic [ref=e23] [cursor=pointer]:
+            - generic:
+              - img
+              - button
+              - generic: Menú
+          - generic [ref=e24]:
+            - link "Trabaja en España" [ref=e25] [cursor=pointer]:
+              - /url: https://impulsatec.net/
+            - link "Empleos" [ref=e26] [cursor=pointer]:
+              - /url: https://tecnologiaenvivo.com/category/oferta-de-empleo/
+            - link "Aula online" [ref=e27] [cursor=pointer]:
+              - /url: https://uneweb.com/cursos/login/
+            - link "Comunidad" [ref=e28] [cursor=pointer]:
+              - /url: https://uneweb.edu.ve/comunidad/
+            - generic [ref=e30] [cursor=pointer]: Más información
+            - img [ref=e33] [cursor=pointer]
+            - link "Whatsapp" [ref=e35] [cursor=pointer]:
+              - /url: https://15557371427.wa.pulse.is
+              - generic [ref=e36]:
+                - img [ref=e38]
+                - generic [ref=e40]: Whatsapp
+    - navigation "main navigation" [ref=e41]:
+      - generic [ref=e42]:
+        - link [ref=e44] [cursor=pointer]:
+          - /url: /
+        - generic [ref=e45]:
+          - generic [ref=e47] [cursor=pointer]:
+            - generic:
+              - img
+              - button
+              - generic: Menú
+          - generic [ref=e48]:
+            - link "Trabaja en España" [ref=e49] [cursor=pointer]:
+              - /url: https://impulsatec.net/
+            - link "Empleos" [ref=e50] [cursor=pointer]:
+              - /url: https://tecnologiaenvivo.com/category/oferta-de-empleo/
+            - link "Aula online" [ref=e51] [cursor=pointer]:
+              - /url: https://uneweb.com/cursos/login/
+            - link "Comunidad" [ref=e52] [cursor=pointer]:
+              - /url: https://uneweb.edu.ve/comunidad/
+            - generic [ref=e54] [cursor=pointer]: Más información
+            - img [ref=e57] [cursor=pointer]
+            - link "Whatsapp" [ref=e59] [cursor=pointer]:
+              - /url: https://15557371427.wa.pulse.is
+              - generic [ref=e60]:
+                - img [ref=e62]
+                - generic [ref=e64]: Whatsapp
+    - generic [ref=e67]:
+      - generic [ref=e68]:
+        - application [ref=e69]:
+          - generic:
+            - generic [ref=e70]:
+              - heading "Diplomado Programación FullStack" [level=1] [ref=e71]
+              - heading "Aprende a programar desde 0 en Python, Js, SQL" [level=2] [ref=e72]
+              - heading "Maestría, Diplomados y Cursos Certificados por el Ministerio de Educación. Aumenta tu poder digital, poder de Ventas, poder de Inteligencia, más de 20 años desarrollando proyectos de tecnología digital con nuestros profesores." [level=2] [ref=e73]
+            - generic:
+              - heading [level=1]: Diplomado Diseño Gráfico Digital
+              - heading [level=2]: Desarrolla proyectos en edición de vídeo y 3D
+              - heading [level=2]: Maestría, Diplomados y Cursos Certificados por el Ministerio de Educación. Aumenta tu poder digital, poder de Ventas, poder de Inteligencia, más de 20 años desarrollando proyectos de tecnología digital con nuestros profesores.
+            - generic:
+              - heading [level=1]: Diplomado Marketing Digital
+              - heading [level=2]: SEO + Ads + community manager + social media
+              - heading [level=2]: Maestría, Diplomados y Cursos Certificados por el Ministerio de Educación. Aumenta tu poder digital, poder de Ventas, poder de Inteligencia, más de 20 años desarrollando proyectos de tecnología digital con nuestros profesores.
+            - generic:
+              - heading [level=1]: Especialización de Inteligencia Artificial
+              - heading [level=2]: Redes neuronales, Prompt, Machine Learning
+              - heading [level=2]: Maestría, Diplomados y Cursos Certificados por el Ministerio de Educación. Aumenta tu poder digital, poder de Ventas, poder de Inteligencia, más de 20 años desarrollando proyectos de tecnología digital con nuestros profesores.
+          - text: Speaker notes
+          - generic [ref=e77]: Diplomado Programación FullStack Aprende a programar desde 0 en Python, Js, SQL Maestría, Diplomados y Cursos Certificados por el Ministerio de Educación. Aumenta tu poder digital, poder de Ventas, poder de Inteligencia, más de 20 años desarrollando proyectos de tecnología digital con nuestros profesores.
+        - generic [ref=e78]:
+          - link "Solicita Asesoría" [ref=e79] [cursor=pointer]:
+            - /url: /formas-de-pago
+          - link "Masterclass online Viernes 3pm" [ref=e80] [cursor=pointer]:
+            - /url: https://www.youtube.com/live/B4y6521OQgI
+          - link "Cronograma" [ref=e81] [cursor=pointer]:
+            - /url: https://uneweb.edu.ve/cronograma/
+          - navigation [ref=e82]:
+            - generic [ref=e83]:
+              - link:
+                - /url: https://instagram.com/uneweb
+              - link [ref=e84] [cursor=pointer]:
+                - /url: https://instagram.com/uneweb
+                - img [ref=e86]
+              - link:
+                - /url: https://facebook.com/uneweb
+              - link [ref=e88] [cursor=pointer]:
+                - /url: https://facebook.com/uneweb
+                - img [ref=e90]
+              - link:
+                - /url: https://twitter.com/desarrollate
+              - link [ref=e92] [cursor=pointer]:
+                - /url: https://twitter.com/desarrollate
+                - img [ref=e94]
+              - link:
+                - /url: https://www.youtube.com/c/UnewebCursosonline
+              - link [ref=e96] [cursor=pointer]:
+                - /url: https://www.youtube.com/c/UnewebCursosonline
+                - img [ref=e98]
+              - link:
+                - /url: https://15557371427.wa.pulse.is/
+              - link [ref=e100] [cursor=pointer]:
+                - /url: https://15557371427.wa.pulse.is/
+                - img [ref=e102]
+      - iframe [ref=e105]:
+        - generic [ref=f1e5]:
+          - textbox "NOMBRE" [ref=f1e11]
+          - generic [ref=f1e16]:
+            - generic [ref=f1e17]:
+              - generic [ref=f1e20] [cursor=pointer]: Venezuela, Bolivarian Republic of
+              - generic [ref=f1e21]:
+                - textbox [ref=f1e22]: "+58"
+                - textbox "WHATSAPP" [ref=f1e23]
+            - generic [ref=f1e25]: "?"
+          - textbox "EMAIL" [ref=f1e31]
+          - textbox "Diplomado o Curso" [ref=f1e37]
+          - iframe [ref=f1e45]:
+            - generic [ref=f2e2]:
+              - generic [ref=f2e3]:
+                - checkbox "No soy un robot" [ref=f2e7]
+                - generic [ref=f2e11]: No soy un robot
+                - generic [ref=f2e13]:
+                  - text: reCAPTCHA va a cambiar sus términos del servicio.
+                  - link "Toma medidas" [ref=f2e14] [cursor=pointer]:
+                    - /url: https://google.com/recaptcha/admin/migrate
+                  - text: .
+              - generic [ref=f2e15]:
+                - generic [ref=f2e18]: reCAPTCHA
+                - generic [ref=f2e19]:
+                  - link "Privacidad" [ref=f2e20] [cursor=pointer]:
+                    - /url: https://www.google.com/intl/es/policies/privacy/
+                  - text: "-"
+                  - link "Términos" [ref=f2e21] [cursor=pointer]:
+                    - /url: https://www.google.com/intl/es/policies/terms/
+          - button "Enviar" [ref=f1e48] [cursor=pointer]
+  - generic [ref=e107]:
+    - heading "Nuestros Diplomados" [level=2] [ref=e109]
+    - generic [ref=e111]:
+      - figure [ref=e113]:
+        - link [ref=e114] [cursor=pointer]:
+          - /url: /diplomado-de-programacion
+      - figure [ref=e116]:
+        - link [ref=e117] [cursor=pointer]:
+          - /url: /diplomado-de-python
+      - figure [ref=e119]:
+        - link [ref=e120] [cursor=pointer]:
+          - /url: /diplomado-de-java
+      - figure [ref=e122]:
+        - link [ref=e123] [cursor=pointer]:
+          - /url: /diplomado-diseno-digital
+      - figure [ref=e125]:
+        - link [ref=e126] [cursor=pointer]:
+          - /url: /diplomado-mercadeo
+  - generic [ref=e128]:
+    - heading "También puedes especializarte" [level=2] [ref=e130]
+    - generic [ref=e132]:
+      - generic [ref=e134]:
+        - figure [ref=e136]:
+          - link / [ref=e137] [cursor=pointer]:
+            - /url: /especializacion-3d
+            - img / [ref=e138]
+        - figure [ref=e140]:
+          - link [ref=e141] [cursor=pointer]:
+            - /url: /especializacion-bases-de-datos
+            - img [ref=e142]
+        - figure [ref=e144]:
+          - link [ref=e145] [cursor=pointer]:
+            - /url: /especializacion-de-android
+            - img [ref=e146]
+        - figure [ref=e148]:
+          - link [ref=e149] [cursor=pointer]:
+            - /url: /especializacion-de-diseno
+            - img [ref=e150]
+        - figure [ref=e152]:
+          - link [ref=e153] [cursor=pointer]:
+            - /url: /especializacion-de-linux
+            - img [ref=e154]
+        - figure [ref=e156]:
+          - link [ref=e157] [cursor=pointer]:
+            - /url: /especializacion-de-mercadeo
+            - img [ref=e158]
+        - figure [ref=e160]:
+          - link [ref=e161] [cursor=pointer]:
+            - /url: /especializacion-de-programacion
+            - img [ref=e162]
+        - figure [ref=e164]:
+          - link [ref=e165] [cursor=pointer]:
+            - /url: /especializacion-java-standard-edition-java-se
+            - img [ref=e166]
+        - figure [ref=e168]:
+          - link [ref=e169] [cursor=pointer]:
+            - /url: /especializacion-java-enterprise-edition-java-ee
+            - img [ref=e170]
+        - figure [ref=e172]:
+          - link [ref=e173] [cursor=pointer]:
+            - /url: /especiaizacion-js
+            - img [ref=e174]
+        - figure [ref=e176]:
+          - link [ref=e177] [cursor=pointer]:
+            - /url: /especializacion-webmaster
+            - img [ref=e178]
+        - figure [ref=e180]:
+          - link [ref=e181] [cursor=pointer]:
+            - /url: /especializacion-wordpress
+            - img [ref=e182]
+      - button "Previous" [ref=e183]:
+        - img [ref=e184]
+      - button "Next" [ref=e186]:
+        - img [ref=e187]
+  - generic [ref=e190]:
+    - generic [ref=e191]:
+      - heading "Cursos online o presenciales" [level=2] [ref=e192]
+      - heading "Amplía el currículo y consigue empleo fácilmente" [level=3] [ref=e193]
+    - generic [ref=e195]:
+      - generic [ref=e197]:
+        - generic [ref=e199]:
+          - figure [ref=e201]
+          - generic [ref=e203]:
+            - heading "After Effects Nivel 2" [level=3] [ref=e204]
+            - paragraph [ref=e205]:
+              - generic [ref=e206]: diseño
+            - paragraph [ref=e207]:
+              - generic [ref=e208]:
+                - img [ref=e210]
+                - generic [ref=e212]: 15 Horas (20 horas académicas)
+          - link "Ver más" [ref=e214] [cursor=pointer]:
+            - /url: /after-effects-nivel-avanzado
+            - strong [ref=e215]: Ver más
+        - generic [ref=e217]:
+          - figure [ref=e219]
+          - generic [ref=e221]:
+            - heading [level=3] [ref=e222]: After Effects Nivel 1
+            - paragraph [ref=e223]:
+              - generic [ref=e224]: diseño
+            - paragraph [ref=e225]:
+              - generic [ref=e226]:
+                - img [ref=e228]
+                - generic [ref=e230]: 15 Horas (20 horas académicas)
+          - link [ref=e232] [cursor=pointer]:
+            - /url: /after-effects-nivel-1
+            - strong [ref=e233]: Ver más
+        - generic [ref=e235]:
+          - figure [ref=e237]
+          - generic [ref=e239]:
+            - heading [level=3] [ref=e240]: Android
+            - paragraph [ref=e241]:
+              - generic [ref=e242]: programacion
+            - paragraph [ref=e243]:
+              - generic [ref=e244]:
+                - img [ref=e246]
+                - generic [ref=e248]: 15 Horas (20 horas académicas)
+          - link [ref=e250] [cursor=pointer]:
+            - /url: /android-aplicaciones-moviles
+            - strong [ref=e251]: Ver más
+        - generic [ref=e253]:
+          - figure [ref=e255]
+          - generic [ref=e257]:
+            - heading [level=3] [ref=e258]: Angular
+            - paragraph [ref=e259]:
+              - generic [ref=e260]: programacion
+            - paragraph [ref=e261]:
+              - generic [ref=e262]:
+                - img [ref=e264]
+                - generic [ref=e266]: 15 Horas (20 horas académicas)
+          - link [ref=e268] [cursor=pointer]:
+            - /url: /curso-de-angular-js
+            - strong [ref=e269]: Ver más
+        - generic [ref=e271]:
+          - figure [ref=e273]
+          - generic [ref=e275]:
+            - heading [level=3] [ref=e276]: Animate
+            - paragraph [ref=e277]:
+              - generic [ref=e278]: diseño
+            - paragraph [ref=e279]:
+              - generic [ref=e280]:
+                - img [ref=e282]
+                - generic [ref=e284]: 15 Horas (20 horas académicas)
+          - link [ref=e286] [cursor=pointer]:
+            - /url: /curso-de-animate-cc
+            - strong [ref=e287]: Ver más
+        - generic [ref=e289]:
+          - figure [ref=e291]
+          - generic [ref=e293]:
+            - heading [level=3] [ref=e294]: Curso de Binance
+            - paragraph [ref=e295]:
+              - generic [ref=e296]: mercadeo
+            - paragraph [ref=e297]:
+              - generic [ref=e298]:
+                - img [ref=e300]
+                - generic [ref=e302]: 15 Horas (20 horas académicas)
+          - link [ref=e304] [cursor=pointer]:
+            - /url: /curso-binance
+            - strong [ref=e305]: Ver más
+        - generic [ref=e307]:
+          - figure [ref=e309]
+          - generic [ref=e311]:
+            - heading [level=3] [ref=e312]: Community Manager
+            - paragraph [ref=e313]:
+              - generic [ref=e314]: mercadeo
+            - paragraph [ref=e315]:
+              - generic [ref=e316]:
+                - img [ref=e318]
+                - generic [ref=e320]: 15 Horas (20 horas académicas)
+          - link [ref=e322] [cursor=pointer]:
+            - /url: /community-manager
+            - strong [ref=e323]: Ver más
+        - generic [ref=e325]:
+          - figure [ref=e327]
+          - generic [ref=e329]:
+            - heading [level=3] [ref=e330]: Comunicación Masiva
+            - paragraph [ref=e331]:
+              - generic [ref=e332]: mercadeo
+            - paragraph [ref=e333]:
+              - generic [ref=e334]:
+                - img [ref=e336]
+                - generic [ref=e338]: 15 Horas (20 horas académicas)
+          - link [ref=e340] [cursor=pointer]:
+            - /url: /comunicacion-masiva-email-y-sms
+            - strong [ref=e341]: Ver más
+        - generic [ref=e343]:
+          - figure [ref=e345]
+          - generic [ref=e347]:
+            - heading [level=3] [ref=e348]: Curso de Campañas Ads
+            - paragraph [ref=e349]:
+              - generic [ref=e350]: mercadeo
+            - paragraph [ref=e351]:
+              - generic [ref=e352]:
+                - img [ref=e354]
+                - generic [ref=e356]: 15 Horas (20 horas académicas)
+          - link [ref=e358] [cursor=pointer]:
+            - /url: /curso-de-ads
+            - strong [ref=e359]: Ver más
+        - generic [ref=e361]:
+          - figure [ref=e363]
+          - generic [ref=e365]:
+            - heading [level=3] [ref=e366]: Blender 3D
+            - paragraph [ref=e367]:
+              - generic [ref=e368]: diseño
+            - paragraph [ref=e369]:
+              - generic [ref=e370]:
+                - img [ref=e372]
+                - generic [ref=e374]: 15 Horas (20 horas académicas)
+          - link [ref=e376] [cursor=pointer]:
+            - /url: /curso-de-3d-en-caracas
+            - strong [ref=e377]: Ver más
+        - generic [ref=e379]:
+          - figure [ref=e381]
+          - generic [ref=e383]:
+            - heading [level=3] [ref=e384]: Bootstrap
+            - paragraph [ref=e385]:
+              - generic [ref=e386]: programacion
+            - paragraph [ref=e387]:
+              - generic [ref=e388]:
+                - img [ref=e390]
+                - generic [ref=e392]: 15 Horas (20 horas académicas)
+          - link [ref=e394] [cursor=pointer]:
+            - /url: /curso-de-bootstrap
+            - strong [ref=e395]: Ver más
+        - generic [ref=e397]:
+          - figure [ref=e399]
+          - generic [ref=e401]:
+            - heading [level=3] [ref=e402]: CSS3
+            - paragraph [ref=e403]:
+              - generic [ref=e404]: programacion
+            - paragraph [ref=e405]:
+              - generic [ref=e406]:
+                - img [ref=e408]
+                - generic [ref=e410]: 15 Horas (20 horas académicas)
+          - link [ref=e412] [cursor=pointer]:
+            - /url: /curso-de-css3
+            - strong [ref=e413]: Ver más
+        - generic [ref=e415]:
+          - figure [ref=e417]
+          - generic [ref=e419]:
+            - heading [level=3] [ref=e420]: Indesign Nivel 1
+            - paragraph [ref=e421]:
+              - generic [ref=e422]: diseño
+            - paragraph [ref=e423]:
+              - generic [ref=e424]:
+                - img [ref=e426]
+                - generic [ref=e428]: 15 Horas (20 horas académicas)
+          - link [ref=e430] [cursor=pointer]:
+            - /url: /curso-de-indesign
+            - strong [ref=e431]: Ver más
+        - generic [ref=e433]:
+          - figure [ref=e435]
+          - generic [ref=e437]:
+            - heading [level=3] [ref=e438]: Indesign Nivel 2
+            - paragraph [ref=e439]:
+              - generic [ref=e440]: diseño
+            - paragraph [ref=e441]:
+              - generic [ref=e442]:
+                - img [ref=e444]
+                - generic [ref=e446]: 15 Horas (20 horas académicas)
+          - link [ref=e448] [cursor=pointer]:
+            - /url: /curso-de-indesign-avanzado
+            - strong [ref=e449]: Ver más
+        - generic [ref=e451]:
+          - figure [ref=e453]
+          - generic [ref=e455]:
+            - heading [level=3] [ref=e456]: Java
+            - paragraph [ref=e457]:
+              - generic [ref=e458]: programacion
+            - paragraph [ref=e459]:
+              - generic [ref=e460]:
+                - img [ref=e462]
+                - generic [ref=e464]: 15 Horas (20 horas académicas)
+          - link [ref=e466] [cursor=pointer]:
+            - /url: /curso-de-java-online
+            - strong [ref=e467]: Ver más
+        - generic [ref=e469]:
+          - figure [ref=e471]
+          - generic [ref=e473]:
+            - heading [level=3] [ref=e474]: Javascript
+            - paragraph [ref=e475]:
+              - generic [ref=e476]: programacion
+            - paragraph [ref=e477]:
+              - generic [ref=e478]:
+                - img [ref=e480]
+                - generic [ref=e482]: 15 Horas (20 horas académicas)
+          - link [ref=e484] [cursor=pointer]:
+            - /url: /curso-de-javascript
+            - strong [ref=e485]: Ver más
+        - generic [ref=e487]:
+          - figure [ref=e489]
+          - generic [ref=e491]:
+            - heading [level=3] [ref=e492]: Jquery
+            - paragraph [ref=e493]:
+              - generic [ref=e494]: programacion
+            - paragraph [ref=e495]:
+              - generic [ref=e496]:
+                - img [ref=e498]
+                - generic [ref=e500]: 15 Horas (20 horas académicas)
+          - link [ref=e502] [cursor=pointer]:
+            - /url: /curso-de-jquery
+            - strong [ref=e503]: Ver más
+        - generic [ref=e505]:
+          - figure [ref=e507]
+          - generic [ref=e509]:
+            - heading [level=3] [ref=e510]: Marketing Digital
+            - paragraph [ref=e511]:
+              - generic [ref=e512]: mercadeo
+            - paragraph [ref=e513]:
+              - generic [ref=e514]:
+                - img [ref=e516]
+                - generic [ref=e518]: 15 Horas (20 horas académicas)
+          - link [ref=e520] [cursor=pointer]:
+            - /url: /curso-de-marketing-digital
+            - strong [ref=e521]: Ver más
+        - generic [ref=e523]:
+          - figure [ref=e525]
+          - generic [ref=e527]:
+            - heading [level=3] [ref=e528]: Node JS
+            - paragraph [ref=e529]:
+              - generic [ref=e530]: programacion
+            - paragraph [ref=e531]:
+              - generic [ref=e532]:
+                - img [ref=e534]
+                - generic [ref=e536]: 15 Horas (20 horas académicas)
+          - link [ref=e538] [cursor=pointer]:
+            - /url: /curso-de-node-js
+            - strong [ref=e539]: Ver más
+        - generic [ref=e541]:
+          - figure [ref=e543]
+          - generic [ref=e545]:
+            - heading [level=3] [ref=e546]: PHP desde Cero
+            - paragraph [ref=e547]:
+              - generic [ref=e548]: programacion
+            - paragraph [ref=e549]:
+              - generic [ref=e550]:
+                - img [ref=e552]
+                - generic [ref=e554]: 15 Horas (20 horas académicas)
+          - link [ref=e556] [cursor=pointer]:
+            - /url: /curso-de-php
+            - strong [ref=e557]: Ver más
+        - generic [ref=e559]:
+          - figure [ref=e561]
+          - generic [ref=e563]:
+            - heading [level=3] [ref=e564]: PostgreSQL
+            - paragraph [ref=e565]:
+              - generic [ref=e566]: programacion
+            - paragraph [ref=e567]:
+              - generic [ref=e568]:
+                - img [ref=e570]
+                - generic [ref=e572]: 15 Horas (20 horas académicas)
+          - link [ref=e574] [cursor=pointer]:
+            - /url: /curso-de-postgre-sql
+            - strong [ref=e575]: Ver más
+        - generic [ref=e577]:
+          - figure [ref=e579]
+          - generic [ref=e581]:
+            - heading [level=3] [ref=e582]: Python desde Cero
+            - paragraph [ref=e583]:
+              - generic [ref=e584]: programacion
+            - paragraph [ref=e585]:
+              - generic [ref=e586]:
+                - img [ref=e588]
+                - generic [ref=e590]: 15 Horas (20 horas académicas)
+          - link [ref=e592] [cursor=pointer]:
+            - /url: /curso-de-python
+            - strong [ref=e593]: Ver más
+        - generic [ref=e595]:
+          - figure [ref=e597]
+          - generic [ref=e599]:
+            - heading [level=3] [ref=e600]: Wordpress
+            - paragraph [ref=e601]:
+              - generic [ref=e602]: programacion
+            - paragraph [ref=e603]:
+              - generic [ref=e604]:
+                - img [ref=e606]
+                - generic [ref=e608]: 15 Horas (20 horas académicas)
+          - link [ref=e610] [cursor=pointer]:
+            - /url: /curso-de-wordpress
+            - strong [ref=e611]: Ver más
+        - generic [ref=e613]:
+          - figure [ref=e615]
+          - generic [ref=e617]:
+            - heading [level=3] [ref=e618]: Lógica de programación
+            - paragraph [ref=e619]:
+              - generic [ref=e620]: programacion
+            - paragraph [ref=e621]:
+              - generic [ref=e622]:
+                - img [ref=e624]
+                - generic [ref=e626]: 15 Horas (20 horas académicas)
+          - link [ref=e628] [cursor=pointer]:
+            - /url: /curso-logica-de-programacion
+            - strong [ref=e629]: Ver más
+        - generic [ref=e631]:
+          - figure [ref=e633]
+          - generic [ref=e635]:
+            - heading [level=3] [ref=e636]: HTML 1
+            - paragraph [ref=e637]:
+              - generic [ref=e638]: programacion
+            - paragraph [ref=e639]:
+              - generic [ref=e640]:
+                - img [ref=e642]
+                - generic [ref=e644]: 15 Horas (20 horas académicas)
+          - link [ref=e646] [cursor=pointer]:
+            - /url: /html
+            - strong [ref=e647]: Ver más
+        - generic [ref=e649]:
+          - figure [ref=e651]
+          - generic [ref=e653]:
+            - heading [level=3] [ref=e654]: HTML 2
+            - paragraph [ref=e655]:
+              - generic [ref=e656]: programacion
+            - paragraph [ref=e657]:
+              - generic [ref=e658]:
+                - img [ref=e660]
+                - generic [ref=e662]: 15 Horas (20 horas académicas)
+          - link [ref=e664] [cursor=pointer]:
+            - /url: /html-5
+            - strong [ref=e665]: Ver más
+        - generic [ref=e667]:
+          - figure [ref=e669]
+          - generic [ref=e671]:
+            - heading [level=3] [ref=e672]: Illustrator Nivel 1
+            - paragraph [ref=e673]:
+              - generic [ref=e674]: diseño
+            - paragraph [ref=e675]:
+              - generic [ref=e676]:
+                - img [ref=e678]
+                - generic [ref=e680]: 15 Horas (20 horas académicas)
+          - link [ref=e682] [cursor=pointer]:
+            - /url: /illustrator
+            - strong [ref=e683]: Ver más
+        - generic [ref=e685]:
+          - figure [ref=e687]
+          - generic [ref=e689]:
+            - heading [level=3] [ref=e690]: Illustrator Nivel 2
+            - paragraph [ref=e691]:
+              - generic [ref=e692]: diseño
+            - paragraph [ref=e693]:
+              - generic [ref=e694]:
+                - img [ref=e696]
+                - generic [ref=e698]: 15 Horas (20 horas académicas)
+          - link [ref=e700] [cursor=pointer]:
+            - /url: /illustrator-nivel-avanzado
+            - strong [ref=e701]: Ver más
+        - generic [ref=e703]:
+          - figure [ref=e705]
+          - generic [ref=e707]:
+            - heading [level=3] [ref=e708]: MySQL
+            - paragraph [ref=e709]:
+              - generic [ref=e710]: programacion
+            - paragraph [ref=e711]:
+              - generic [ref=e712]:
+                - img [ref=e714]
+                - generic [ref=e716]: 15 Horas (20 horas académicas)
+          - link [ref=e718] [cursor=pointer]:
+            - /url: /mysql
+            - strong [ref=e719]: Ver más
+        - generic [ref=e721]:
+          - figure [ref=e723]
+          - generic [ref=e725]:
+            - heading [level=3] [ref=e726]: Photoshop Nivel 1
+            - paragraph [ref=e727]:
+              - generic [ref=e728]: diseño
+            - paragraph [ref=e729]:
+              - generic [ref=e730]:
+                - img [ref=e732]
+                - generic [ref=e734]: 15 Horas (20 horas académicas)
+          - link [ref=e736] [cursor=pointer]:
+            - /url: /photoshop
+            - strong [ref=e737]: Ver más
+        - generic [ref=e739]:
+          - figure [ref=e741]
+          - generic [ref=e743]:
+            - heading [level=3] [ref=e744]: Photoshop Nivel 2
+            - paragraph [ref=e745]:
+              - generic [ref=e746]: diseño
+            - paragraph [ref=e747]:
+              - generic [ref=e748]:
+                - img [ref=e750]
+                - generic [ref=e752]: 15 Horas (20 horas académicas)
+          - link [ref=e754] [cursor=pointer]:
+            - /url: /photoshop-avanzado
+            - strong [ref=e755]: Ver más
+        - generic [ref=e757]:
+          - figure [ref=e759]
+          - generic [ref=e761]:
+            - heading [level=3] [ref=e762]: Premiere Pro
+            - paragraph [ref=e763]:
+              - generic [ref=e764]: diseño
+            - paragraph [ref=e765]:
+              - generic [ref=e766]:
+                - img [ref=e768]
+                - generic [ref=e770]: 15 Horas (20 horas académicas)
+          - link [ref=e772] [cursor=pointer]:
+            - /url: /premiere
+            - strong [ref=e773]: Ver más
+        - generic [ref=e775]:
+          - figure [ref=e777]
+          - generic [ref=e779]:
+            - heading [level=3] [ref=e780]: SEO
+            - paragraph [ref=e781]:
+              - generic [ref=e782]: mercadeo
+            - paragraph [ref=e783]:
+              - generic [ref=e784]:
+                - img [ref=e786]
+                - generic [ref=e788]: 15 Horas (20 horas académicas)
+          - link [ref=e790] [cursor=pointer]:
+            - /url: /seo
+            - strong [ref=e791]: Ver más
+      - button "Previous" [disabled]:
+        - img
+      - button "Next" [ref=e792]:
+        - img [ref=e793]
+  - generic [ref=e797]:
+    - heading "Nuestros Diplomados, Maestría y Cursos online o presenciales están certificados por el Ministerio de Educación, encuentra empleo o trabaja Freelance después de especializarte." [level=3] [ref=e799]
+    - generic [ref=e800]:
+      - heading "Forma parte de nuestra Comunidad, obtén descuentos, talleres y tutoriales gratis" [level=4] [ref=e801]:
+        - text: Forma parte de nuestra Comunidad,
+        - text: obtén descuentos, talleres y tutoriales gratis
+      - link "Únete a nuestra comunidad" [ref=e802] [cursor=pointer]:
+        - /url: https://uneweb.edu.ve/comunidad/
+  - generic [ref=e804]:
+    - heading "Nuestros alumnos" [level=2] [ref=e806]
+    - generic [ref=e810]:
+      - figure [ref=e812]
+      - figure [ref=e814]
+      - figure [ref=e816]
+      - figure [ref=e818]
+      - figure [ref=e820]
+      - figure [ref=e822]
+      - figure [ref=e824]
+      - figure [ref=e826]
+  - generic [ref=e828]:
+    - heading "Testimonios" [level=2] [ref=e830]
+    - generic [ref=e832]:
+      - generic [ref=e834]:
+        - generic [ref=e835]:
+          - generic [ref=e836]: Orlando Perez ★★★★☆
+          - generic [ref=e837]: Mi nombre es Orlando Pérez, soy ingeniero Mecánico, tengo varios años dedicado a instalar y enseñar el uso de sistemas de gestión Administrativo Contable y RRHH, he decidido incursionar en IA, con la posibilidad de aplicarla a los sistemas. Los cursos de UNEWEB,están bien planteados y bien explicados, es posible sacarles provecho. Es posible aprovecharlos
+        - generic [ref=e838]:
+          - generic [ref=e839]: Veronica Mancinelli ★★★★★
+          - generic [ref=e840]: Excelentes profesores y andragogía, los programas son intensivos y en poco tiempo dan un contenido concentrado. De verdad los diplomados están preparados para personas con cero conocimiento en la materia que escoja. Muy feliz y agradecida de haberme inscrito en este instituto.
+        - generic [ref=e841]:
+          - generic [ref=e842]: Liliana Berlioz ★★★★★
+          - generic [ref=e843]: Excelente Instituto para estudiar tecnologías relacionadas con internet, computación y web. Dan programación, diseño, redes sociales, etc. Los profesores son buenos, hay muchos horarios y muy flexibles. Muy bueno de verdad. Y lo mejor es que está avalado por el Ministerio de Educación. Es decir, que el título es válido y tomado en cuenta fuera de Venezuela. Lo puedes legalizar y apostilllar.
+        - generic [ref=e844]:
+          - generic [ref=e845]: JOSE ANTONIO CASTILLO GONZALEZ ★★★★★
+          - generic [ref=e846]: Quisiera agradecer a los docentes de UNEWEB, por el conocimiento adquirido, el cual me permitio culminar con exito uno de los proyectos mas dificiles en mi trabajo. Los felicito en especial a la profesora Dayana Romero y al Profesor Aluirson Añez.
+        - generic [ref=e847]:
+          - generic [ref=e848]: Eder labarca ★★★★★
+          - generic [ref=e849]: Aprendí mucho en las institución, he logrado aplicar los conocimientos en mi vida profesional como freelancer, agradecido todos los profesores
+      - button "Previous" [ref=e850]:
+        - img [ref=e851]
+      - button "Next" [ref=e853]:
+        - img [ref=e854]
+  - contentinfo [ref=e856]:
+    - generic [ref=e858]:
+      - generic [ref=e859]:
+        - img [ref=e861]
+        - paragraph [ref=e863]: El Rosal, avenida Francisco Miranda con Avenida José Martí, Torre EASO piso 10, oficina 10D Caracas 1080, Distrito Capital.
+      - generic [ref=e865]:
+        - heading "UNEWEB" [level=3] [ref=e867]
+        - list [ref=e868]:
+          - listitem [ref=e869]:
+            - link "Quienes Somos" [ref=e870] [cursor=pointer]:
+              - /url: /instituto-uneweb
+          - listitem [ref=e871]:
+            - link "Web Inteligente" [ref=e872] [cursor=pointer]:
+              - /url: "https://webinteligente.biz/ "
+          - listitem [ref=e873]:
+            - link "Pago online" [ref=e874] [cursor=pointer]:
+              - /url: /formas-de-pago
+          - listitem [ref=e875]:
+            - link "Blog" [ref=e876] [cursor=pointer]:
+              - /url: https://tecnologiaenvivo.com/
+          - listitem [ref=e877]:
+            - link "Únete a la comunidad" [ref=e878] [cursor=pointer]:
+              - /url: https://uneweb.edu.ve/comunidad
+          - listitem [ref=e879]:
+            - link "Términos y condiciones" [ref=e880] [cursor=pointer]:
+              - /url: /como-inscribirse
+      - generic [ref=e882]:
+        - heading "PROGRAMAS" [level=3] [ref=e884]
+        - list [ref=e885]:
+          - listitem [ref=e886]:
+            - link "Diplomado de Programación" [ref=e887] [cursor=pointer]:
+              - /url: /diplomado-de-programacion
+          - listitem [ref=e888]:
+            - link "Diplomado de Java" [ref=e889] [cursor=pointer]:
+              - /url: /diplomado-de-java
+          - listitem [ref=e890]:
+            - link "Diplomado de Python" [ref=e891] [cursor=pointer]:
+              - /url: /diplomado-de-python
+          - listitem [ref=e892]:
+            - link "Diplomado de Webmaster" [ref=e893] [cursor=pointer]:
+              - /url: /diplomado-integracion-web
+          - listitem [ref=e894]:
+            - link "Diplomado de Diseño Digital" [ref=e895] [cursor=pointer]:
+              - /url: /diplomado-diseno-digital
+          - listitem [ref=e896]:
+            - link "Diplomado de Mercadeo" [ref=e897] [cursor=pointer]:
+              - /url: /diplomado-mercadeo
+          - listitem [ref=e898]:
+            - link "Diplomado de Excel" [ref=e899] [cursor=pointer]:
+              - /url: /excel
+          - listitem [ref=e900]:
+            - link "Maestría PDW" [ref=e901] [cursor=pointer]:
+              - /url: /maestria
+      - generic [ref=e903]:
+        - heading "CONTACTO" [level=3] [ref=e905]
+        - list [ref=e906]:
+          - listitem [ref=e907]:
+            - link "04143205366" [ref=e908] [cursor=pointer]:
+              - /url: tel:04143205366
+          - listitem [ref=e909]:
+            - link "04142489270" [ref=e910] [cursor=pointer]:
+              - /url: tel:04142489270
+          - listitem [ref=e911]:
+            - link "04120922157" [ref=e912] [cursor=pointer]:
+              - /url: tel:04125750324
+          - listitem [ref=e913]:
+            - link "0212-9538412" [ref=e914] [cursor=pointer]:
+              - /url: tel:+582129538412
+          - listitem [ref=e915]:
+            - link "Whatsapp" [ref=e916] [cursor=pointer]:
+              - /url: https://15557371427.wa.pulse.is
+      - generic [ref=e919]:
+        - heading "NUESTRAS REDES" [level=3] [ref=e920]
+        - navigation [ref=e921]:
+          - generic [ref=e922]:
+            - link [ref=e923] [cursor=pointer]:
+              - /url: https://instagram.com/uneweb
+              - img [ref=e925]
+            - link [ref=e927] [cursor=pointer]:
+              - /url: https://facebook.com/uneweb
+              - img [ref=e929]
+            - link [ref=e931] [cursor=pointer]:
+              - /url: https://twitter.com/desarrollate
+              - img [ref=e933]
+            - link [ref=e935] [cursor=pointer]:
+              - /url: https://www.youtube.com/c/UnewebCursosonline
+              - img [ref=e937]
+            - link [ref=e939] [cursor=pointer]:
+              - /url: https://15557371427.wa.pulse.is
+              - img [ref=e941]
+  - paragraph [ref=e946]: © 2003 Uneweb Instituto de Comunicación Web C.A J-29431337-0 | 22 años formando estudiantes y profesionales | Ministerio de Educación Código Número PR -07-017-11AC
+```
