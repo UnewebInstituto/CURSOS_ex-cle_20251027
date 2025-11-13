@@ -1,0 +1,133 @@
+¡Hola\! Como experto en JavaScript, identifico varios problemas en tu código que explican por qué **no se está recorriendo correctamente la estructura XML** y por qué el objeto `xmlDoc` resultante de `parseFromString` podría no ser el que esperas.
+
+Aquí están los errores y las sugerencias de corrección:
+
+-----
+
+## 🛑 Error 1: XML Inválido (Falta de un Elemento Raíz Único)
+
+El problema principal está en la cadena XML (`xmlString`). Un documento XML **válido** debe tener **exactamente un elemento raíz** que contenga todos los demás elementos.
+
+Tu `xmlString` tiene varios elementos `<libro>` en el nivel superior, pero no están envueltos en un elemento raíz común (como `<biblioteca>` o `<libros>`).
+
+### 🛠️ Corrección para el XML
+
+Modifica la cadena `xmlString` para incluir un elemento raíz, por ejemplo, `<biblioteca>`:
+
+```javascript
+const xmlString = `
+    // 👇 Agrega el elemento raíz aquí
+    <biblioteca> 
+        <libro id='101'>
+            <titulo>Cien A#os de Soledad</titulo>
+            <autor>Gabriel Garcia Marquez</autor>
+        </libro>
+        <libro id='102'>
+            <titulo>Maria</titulo>
+            <autor>Jorge Isaac</autor>
+        </libro>
+        <libro id='103'>
+            <titulo>Los Miserables</titulo>
+            <autor>Victor Hugo</autor>
+        </libro>
+    </biblioteca> // 👆 Cierra el elemento raíz aquí
+`;
+```
+
+> **Impacto:** Si el XML es inválido, `DOMParser` aún puede intentar parsearlo, pero el documento resultante (`xmlDoc`) puede no contener todos los nodos esperados o podría tener un nodo de error en su lugar, lo que hace que las llamadas a `getElementsByTagName` fallen o devuelvan resultados parciales/incorrectos.
+
+-----
+
+## 🛑 Error 2: Acceso Incorrecto al Contenido del Nodo
+
+En tu bucle `for`, estás almacenando los **elementos del nodo** completos, no su **contenido de texto** ni sus **atributos**.
+
+```javascript
+// CÓDIGO ACTUAL (INCORRECTO)
+for (let i = 0; i < xmlDoc.getElementsByTagName('titulo').length; i++){
+    tituloElemento.push(xmlDoc.getElementsByTagName('titulo')[i]); // Almacena el elemento completo (<titulo>...</titulo>)
+    autorElemento.push(xmlDoc.getElementsByTagName('autor')[i]);   // Almacena el elemento completo (<autor>...</autor>)
+}
+```
+
+### 🛠️ Corrección para el Contenido y Atributos
+
+Debes acceder a la propiedad **`.textContent`** para obtener el texto dentro de la etiqueta, y si quieres obtener el `id` de `<libro>`, debes llamar a **`.getAttribute('id')`** sobre el elemento `<libro>`:
+
+```javascript
+// CÓDIGO CORREGIDO para extraer el texto y el ID
+const libros = xmlDoc.getElementsByTagName('libro'); // Obtener todos los elementos <libro>
+
+for (let i = 0; i < libros.length; i++) {
+    const libro = libros[i];
+    
+    // Obtener el ID del libro
+    idElemento.push(libro.getAttribute('id')); 
+
+    // Obtener el texto de los elementos 'titulo' y 'autor'
+    // Se usa [0] porque getElementsByTagName devuelve una lista, incluso si solo hay uno
+    tituloElemento.push(libro.getElementsByTagName('titulo')[0].textContent);
+    autorElemento.push(libro.getElementsByTagName('autor')[0].textContent);
+}
+```
+
+-----
+
+## ✅ Solución Completa Sugerida
+
+Incorporando ambas correcciones y optimizando ligeramente la lectura, tu código debería verse así:
+
+```javascript
+const xmlString = `
+    <biblioteca> 
+        <libro id='101'>
+            <titulo>Cien A#os de Soledad</titulo>
+            <autor>Gabriel Garcia Marquez</autor>
+        </libro>
+        <libro id='102'>
+            <titulo>Maria</titulo>
+            <autor>Jorge Isaac</autor>
+        </libro>
+        <libro id='103'>
+            <titulo>Los Miserables</titulo>
+            <autor>Victor Hugo</autor>
+        </libro>
+    </biblioteca>
+`;
+const parser = new DOMParser();
+
+const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+
+let tituloElemento = []; // Usamos [] en lugar de new Array()
+let autorElemento = [];
+let idElemento = [];
+
+// 1. Obtener todos los elementos 'libro' del documento
+const libros = xmlDoc.getElementsByTagName('libro'); 
+
+// 2. Iterar sobre la lista de libros
+for (let i = 0; i < libros.length; i++) {
+    const libro = libros[i];
+    
+    // Extracción de datos
+    const id = libro.getAttribute('id');
+    const titulo = libro.getElementsByTagName('titulo')[0].textContent;
+    const autor = libro.getElementsByTagName('autor')[0].textContent;
+    
+    // Almacenar en los arrays
+    idElemento.push(id);
+    tituloElemento.push(titulo);
+    autorElemento.push(autor);
+}
+
+console.log('--- IDs ---');
+console.log(idElemento); // Muestra ['101', '102', '103']
+
+console.log('--- Títulos ---');
+console.log(tituloElemento); // Muestra ['Cien A#os de Soledad', 'Maria', 'Los Miserables']
+
+console.log('--- Autores ---');
+console.log(autorElemento); // Muestra ['Gabriel Garcia Marquez', 'Jorge Isaac', 'Victor Hugo']
+```
+
+¿Te gustaría que te muestre un ejemplo de cómo podrías mapear esta información en un **array de objetos** para un manejo de datos más moderno y eficiente en JavaScript?
