@@ -1,0 +1,12 @@
+https://www.genbeta.com/desarrollo/hace-30-anos-programador-netscape-creo-10-dias-primera-version-uno-lenguajes-usados-hoy-internet
+
+
+https://es.wikipedia.org/wiki/TypeScript
+
+
+Compilación 
+
+      (Transpilación)
+
+TypeScript -> Javascript
+
