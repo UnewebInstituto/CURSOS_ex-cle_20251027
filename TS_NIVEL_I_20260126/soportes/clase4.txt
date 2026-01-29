@@ -1,0 +1,81 @@
+¡Hola! Entiendo perfectamente lo que está pasando. Estás experimentando un comportamiento clásico cuando trabajas con **Decoradores Experimentales** en TypeScript y configuraciones de salida de archivos.
+
+Como experto en TypeScript, he analizado tus archivos y el problema no está en tu lógica de programación (que es muy sólida y utiliza genéricos de forma excelente), sino en una pequeña contradicción en tu `tsconfig.json`.
+
+---
+
+## El Diagnóstico: ¿Por qué no se ejecuta el decorador?
+
+El problema principal reside en la opción `"emitDeclarationOnly": true` dentro de tu `tsconfig.json`.
+
+Al tener esta opción activa:
+
+1. El compilador **solo genera los archivos de definición** (`.d.ts`).
+2. **No se genera el código JavaScript** (`.js`) resultante.
+3. Si intentas ejecutar el archivo con un motor como Node.js o una herramienta que dependa de la compilación previa, el código de los decoradores (que requiere una transformación específica de TS a JS) simplemente no existe en el entorno de ejecución.
+
+Además, los decoradores en TypeScript son "azúcar sintáctico" que requiere que el compilador transforme la clase. Si el compilador está configurado para no emitir código, la lógica del decorador `@Auditable` nunca se inyecta.
+
+---
+
+## La Solución
+
+Para que el código se ejecute correctamente y puedas ver los resultados en la consola a partir de la línea 108, debes modificar tu `tsconfig.json`:
+
+### 1. Modifica el `tsconfig.json`
+
+Cambia la opción de emisión para permitir que TypeScript genere el código ejecutable:
+
+```json
+{
+  "compilerOptions": {
+    // ... otras opciones
+    "experimentalDecorators": true,
+    "emitDeclarationOnly": false, // CAMBIA ESTO A FALSE
+    "noEmit": false               // Asegúrate de que no esté en true si existe
+  }
+}
+
+```
+
+### 2. Consideración sobre el Target
+
+Tienes el `"target": "esnext"`. Los decoradores experimentales funcionan bien aquí, pero asegúrate de que el entorno donde corres el código (Node.js versión 16+) soporte las características de ESNext que estás usando.
+
+---
+
+## Análisis de tu código
+
+Tu implementación del decorador es técnicamente correcta para la versión "experimental":
+
+```typescript
+function Auditable<T extends {new(...args:any[]):{}}>(constructor:T){
+    return class extends constructor{
+        fechaRegistro = new Date();
+    }
+}
+
+```
+
+### ¿Por qué usas `as Empleado & {fechaRegistro:Date}`?
+
+Esto es necesario porque, en TypeScript, los decoradores de clases **no cambian la firma del tipo** de la clase para el sistema de tipos estático, aunque sí lo hagan en tiempo de ejecución. Es una limitación conocida de los `experimentalDecorators`.
+
+---
+
+## Cómo probarlo ahora
+
+1. Cambia `"emitDeclarationOnly": false`.
+2. Ejecuta la compilación: `tsc`.
+3. Corre el archivo generado: `node index.js`.
+
+**Resultado esperado en consola:**
+
+```text
+Prueba de decoradores
+Nombre de Empleado: Desconocido
+Fecha de registro: [Fecha actual]
+
+```
+
+¿Te gustaría que te ayude a migrar este decorador a la sintaxis estándar de JavaScript/TypeScript (la que no requiere `experimentalDecorators`) para que el producto **Interaxia** sea más compatible a futuro?
