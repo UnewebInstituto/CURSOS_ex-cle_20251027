@@ -1,0 +1,216 @@
+¡Hola! Entiendo perfectamente lo que está pasando. Como experto en TypeScript, te diré que te has topado con una de las reglas más estrictas (y útiles) de las versiones recientes cuando se configura el compilador para entornos modernos.
+
+El error que ves: `A top-level 'export' modifier cannot be used on value declarations...` ocurre porque en tu archivo `tsconfig.json` tienes activada la opción **`"verbatimModuleSyntax": true`**.
+
+---
+
+### ¿Por qué ocurre esto?
+
+Cuando activas `verbatimModuleSyntax`, TypeScript se vuelve muy riguroso sobre qué es un **tipo** (que desaparece al compilar) y qué es un **valor** (que permanece en el JS final).
+
+En el contexto de módulos ESM (ECMAScript Modules) bajo ciertas configuraciones de Node.js, TypeScript te obliga a ser explícito para evitar que el compilador tenga que adivinar si algo debe ser exportado como código real o solo como metadatos de tipo.
+
+### Recomendaciones para solucionar  
+
+Aquí tienes los pasos para corregir el módulo `Usuario.ts` y asegurar que `main.ts` funcione correctamente:
+
+#### 1. Corregir `Usuario.ts`
+
+Para que el compilador esté feliz con `verbatimModuleSyntax`, lo ideal es separar las exportaciones de tipos y valores, o simplemente asegurarte de que el archivo se trate correctamente como un módulo ESM. Sin embargo, el error específico suele resolverse cambiando la forma en que exportas si el compilador detecta ambigüedad.
+
+Intenta cambiar la exportación a una lista al final, que es más limpia para este modo:
+
+```typescript
+interface Usuario {
+    id: number;
+    nombre: string;
+}
+
+const DEFAULT_ID = 0;
+
+// Exportamos explícitamente el tipo y la constante
+export type { Usuario };
+export { DEFAULT_ID };
+
+```
+
+#### 2. Corregir la discrepancia de nombres en `main.ts`
+
+He notado un detalle en tu archivo `main.ts`: estás intentando importar `User`, pero en `Usuario.ts` la interfaz se llama `Usuario`.
+
+Debes ajustar tu `main.ts` así:
+
+```typescript
+// Importación de valor (DEFAULT_ID) y tipo (Usuario)
+import { DEFAULT_ID, type Usuario } from './Usuario.js'; 
+
+// O si prefieres mantener tu alias:
+import type { Usuario as User } from './Usuario.js';
+
+const nuevoUsuario: User = { 
+    id: DEFAULT_ID, 
+    nombre: "Invitado" 
+};
+
+console.log(nuevoUsuario);
+
+```
+
+> **Nota clave:** Dado que usas `"module": "nodenext"`, es obligatorio incluir la extensión **`.js`** en tus rutas de importación dentro de los archivos `.ts`, aunque el archivo físico sea `.ts`.
+
+---
+
+### Resumen de cambios sugeridos
+
+| Problema | Solución |
+| --- | --- |
+| **Error de export** | Usa `export type { ... }` para interfaces y `export { ... }` para constantes. |
+| **Nombre de Interfaz** | Asegúrate de que `User` coincida con `Usuario` o usa un alias. |
+| **Extensión de archivo** | Añade `.js` al final de tus `import` para cumplir con `nodenext`. |
+
+¿Te gustaría que te ayude a ajustar también el archivo `main.ts` para que no tengas errores de compilación al ejecutarlo con Node.js?
+
+
+El error que ves ahora, `ECMAScript imports and exports cannot be written in a CommonJS file...`, ocurre porque TypeScript ha detectado que tu proyecto está configurado para usar módulos de **Node.js (CommonJS)** por defecto, pero estás usando la sintaxis moderna de **ESM** (`export`).
+
+Esto suele suceder cuando el compilador no encuentra una señal clara de que el archivo debe tratarse como un módulo moderno. Aquí tienes las recomendaciones para solucionarlo en tu proyecto ** **:
+
+---
+
+### 1. La solución recomendada: `package.json`
+
+La forma más estándar de decirle a TypeScript y a Node.js que todo tu proyecto usa módulos modernos es añadir una propiedad a tu archivo `package.json`.
+
+* Abre (o crea) el archivo `package.json` en la raíz de tu proyecto.
+* Añade la línea: `"type": "module"`.
+
+```json
+{
+  "name": " -project",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": { ... }
+}
+
+```
+
+### 2. Ajuste en `tsconfig.json`
+
+Dado que tu configuración ya tiene `"module": "nodenext"`, el compilador es muy estricto con la concordancia entre el formato de archivo y el sistema de módulos.
+
+* Asegúrate de que la opción `"moduleResolution": "nodenext"` esté presente (normalmente se hereda de `"module": "nodenext"`, pero es bueno verificarlo).
+* Verifica que no tengas un archivo `package.json` en una carpeta superior que esté forzando el modo CommonJS.
+
+### 3. Alternativa de extensión de archivo
+
+Si no quieres cambiar el `package.json` global, puedes renombrar tus archivos de `.ts` a **`.mts`**.
+
+* La extensión `.mts` le indica explícitamente a TypeScript que el archivo es un **Módulo ECMAScript**, ignorando cualquier otra configuración.
+
+---
+
+### ¿Por qué falló el cambio anterior?
+
+En la imagen se observa que el compilador sigue tratando el archivo como "CommonJS" (el formato antiguo de Node.js). Bajo ese formato, no se permite la palabra clave `export` tal como la has escrito. Al aplicar el paso 1 (`"type": "module"`), ese error desaparecerá inmediatamente porque habilitarás el soporte nativo para los `export` que definiste en `Usuario.ts`.
+
+¿Te gustaría que revisemos el contenido de tu `package.json` para asegurar que la integración sea correcta?
+
+El error que ves en `main.ts` es la consecuencia directa de utilizar la configuración `"module": "nodenext"` en tu `tsconfig.json`. En este modo, TypeScript emula el comportamiento estricto de Node.js para módulos ESM (ECMAScript Modules).
+
+Para que tu proyecto ** ** compile correctamente, debes realizar dos ajustes clave en `main.ts`:
+
+---
+
+### 1. Especificar la extensión del archivo
+
+A diferencia del TypeScript tradicional, bajo `nodenext` las rutas de importación **deben incluir la extensión del archivo final** que se ejecutará en Node.js (que será `.js`, no `.ts`).
+
+* **Error observado:** `Relative import paths need explicit file extensions...`
+* **Solución:** Cambia `./Usuario` por `./Usuario.js`.
+
+### 2. Corregir la referencia de nombres
+
+En tu archivo `Usuario.ts`, definiste la interfaz como `Usuario`, pero en `main.ts` intentas importar algo llamado `User`. Como esa exportación no existe con ese nombre, el compilador falla.
+
+* **Solución:** Importa `Usuario` y, si prefieres mantener el nombre `User` en tu código, usa un alias con la palabra clave `as`.
+
+---
+
+### Código Final Sugerido para `main.ts`
+
+Así es como debe quedar tu archivo para eliminar todos los subrayados rojos:
+
+```typescript
+// Importamos DEFAULT_ID y la interfaz Usuario (renombrándola a User)
+// Nota el uso de la extensión .js al final
+import { DEFAULT_ID, type Usuario as User } from './Usuario.js';
+
+// Si necesitas el segundo tipo de importación que tenías:
+import type { Usuario as UsuarioTipo } from './Usuario.js';
+
+const nuevoUsuario: User = { 
+    id: DEFAULT_ID, 
+    nombre: "Invitado" 
+};
+
+console.log(nuevoUsuario);
+
+```
+
+### ¿Por qué funciona esto?
+
+1. **Sintaxis Verbatim:** Al usar `import { type ... }`, cumples con la regla de `verbatimModuleSyntax` de tu configuración, indicando qué es un tipo y qué es un valor.
+2. **Resolución de Node:** Node.js en modo ESM no busca archivos automáticamente (no "adivina" si es `.js`, `.json`, etc.); requiere la ruta completa. TypeScript te obliga a escribirlo así para garantizar que el archivo generado sea válido.
+
+¿Quieres que probemos a ejecutar el compilador `tsc` ahora para ver si el flujo de construcción de ** ** ya está limpio?
+
+El error que estás viendo en la función `fechData` de tu proyecto ** ** es un problema de **asignación de tipos genéricos**.
+
+El mensaje `Type 'T[]' is not assignable to type 'ProductoSummaryDTO[]'` ocurre porque has definido una variable con un tipo concreto (`ProductoSummaryDTO[]`), pero luego intentas forzarle un tipo genérico (`T[]`) mediante una aserción (`as T[]`).
+
+### El motivo del error
+
+1. **Incompatibilidad de Garantías:** En la línea del error, defines `const summaryData: ProductoSummaryDTO[]`. Esto le dice a TypeScript: "Esta variable **solo** puede contener resúmenes de productos".
+2. **Conflicto con el Genérico:** Al final del mapeo usas `as T[]`. El genérico `T` en tu función `fechData<T>` representa **cualquier cosa** que el usuario pida al llamar a la función.
+3. **El Problema Lógico:** TypeScript no puede garantizar que `T` sea siempre un `ProductoSummaryDTO`. Si alguien llamara a la función como `fechData<Usuario>`, tu código intentaría meter una lista de productos en una variable que espera usuarios, lo cual rompería la seguridad de tipos.
+
+---
+
+### Cómo corregirlo
+
+Para solucionar esto en la lógica de ** **, debes asegurar que el mapeo de datos devuelva exactamente lo que el genérico `T` espera. Tienes dos opciones principales:
+
+#### Opción A: Aserción directa en el retorno (Recomendado para mocks)
+
+No tipes la variable intermedia con el DTO concreto si planeas retornarla como `T`. Deja que la aserción ocurra al final para cumplir con la firma de la función.
+
+```typescript
+// En api.ts
+const summaryData = mockData.map(p => ({
+    id: p.id,
+    nombre: p.nombre,
+    precio: p.precio
+})) as unknown as T; // Forzamos la salida al genérico esperado
+
+return { status: HttpStatus.OK, data: summaryData };
+
+```
+
+#### Opción B: Restringir el Genérico (Más robusto)
+
+Si tu función `fechData` siempre va a devolver objetos que se parecen a un producto, puedes restringir `T`.
+
+```typescript
+export async function fechData<T extends object>(endpoint: string): Promise<ApiResponse<T>> {
+   // ... lógica
+}
+
+```
+
+### Nota sobre los archivos JS generados
+
+He revisado tus archivos `api.js` e `index.js`. Actualmente, la compilación ha "ignorado" el error para generar el JavaScript, pero el error en el editor persistirá y podría causar fallos si cambias la estructura de los datos en el futuro.
+
+**¿Te gustaría que ajustemos la interfaz `ApiResponse` para que maneje mejor estos casos de éxito y error de forma discriminada?**
+
+
